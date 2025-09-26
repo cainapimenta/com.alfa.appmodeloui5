@@ -1,0 +1,127 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "com.alfa.appmodeloui5",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.7",
+      "toolsId": "2d355525-7ad2-4ca7-a99e-4137ed8fdb03"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/(S(2mwdgxjrg3nzs1ygvy53i4oz))/OData/OData.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "sem_obj_products-Display": {
+          "semanticObject": "sem_obj_products",
+          "action": "Display",
+          "title": "{{sem_obj_products-Display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.140.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.alfa.appmodeloui5.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.alfa.appmodeloui5.view",
+        "async": true,
+        "viewPath": "com.alfa.appmodeloui5.view"
+      },
+      "routes": [
+        {
+          "name": "RoutePRoducts",
+          "pattern": ":?query:",
+          "target": [
+            "TargetPRoducts"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetPRoducts": {
+          "id": "Products",
+          "name": "Products"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.alfa.appmodeloui5.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

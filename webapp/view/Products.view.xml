@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="com.alfa.appmodeloui5.controller.Products"
+    xmlns="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:p="sap.m.plugins"
+>
+    <m:Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <Table
+            rows="{/Products}"
+            selectionMode="None"
+        >
+            <extension>
+                <m:OverflowToolbar style="Clear">
+                    <m:Title
+                        id="title"
+                        text="Products"
+                    />
+                </m:OverflowToolbar>
+            </extension>
+            <columns>
+                <Column width="11rem">
+                    <m:Label text="ID" />
+                    <template>
+                        <m:Label text="{ID}" />
+                    </template>
+                </Column>
+                <Column width="11rem">
+                    <m:Label text="Nome" />
+                    <template>
+                        <m:Label text="{Name}" />
+                    </template>
+                </Column>
+            </columns>
+        </Table>
+    </m:Page>
+</mvc:View>
