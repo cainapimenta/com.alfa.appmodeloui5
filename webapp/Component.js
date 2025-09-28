@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "com/alfa/appmodeloui5/model/models"
-], (UIComponent, models) => {
+    "com/alfa/appmodeloui5/model/models",
+    "com/alfa/appmodeloui5/connection/connector"
+], (UIComponent, models, connector) => {
     "use strict";
 
     return UIComponent.extend("com.alfa.appmodeloui5.Component", {
@@ -21,6 +22,8 @@ sap.ui.define([
 
             // enable routing
             this.getRouter().initialize();
+
+            connector.init(this);
         }
     });
 });

@@ -24,19 +24,70 @@
                 </m:OverflowToolbar>
             </extension>
             <columns>
-                <Column width="11rem">
-                    <m:Label text="ID" />
+                <Column resizable="false">
+                    <m:Label text="ID do Produto" />
                     <template>
                         <m:Label text="{ID}" />
                     </template>
                 </Column>
-                <Column width="11rem">
-                    <m:Label text="Nome" />
+                <Column resizable="false">
+                    <m:Label text="Produto" />
                     <template>
                         <m:Label text="{Name}" />
                     </template>
                 </Column>
+                <Column resizable="false">
+                    <m:Label text="Descrição" />
+                    <template>
+                        <m:Label text="{Description}" />
+                    </template>
+                </Column>
+                <Column resizable="false">
+                    <m:Label text="Avaliação" />
+                    <template>
+                        <m:Label text="{Rating}" />
+                    </template>
+                </Column>
+                <Column resizable="false">
+                    <m:Label text="Preço" />
+                    <template>
+                        <m:Label text="{Price}" />
+                    </template>
+                </Column>
+                <Column
+                    resizable="false"
+                    width="5rem"
+                >
+                    <m:Label text="" />
+                    <template>
+                        <m:HBox
+                            alignItems="Center"
+                            justifyContent="Center"
+                        >
+                            <m:Button
+                                icon="sap-icon://delete"
+                                press="handleDeleteProduct"
+                                type="Negative"
+                            />
+                        </m:HBox>
+                    </template>
+                </Column>
             </columns>
         </Table>
+
+        <!-- Footer -->
+        <m:footer>
+            <m:OverflowToolbar style="Clear">
+                <m:ToolbarSpacer />
+
+                <m:Button
+                    text="Adicionar produto"
+                    type="Emphasized"
+                    icon="sap-icon://add"
+                    iconFirst="false"
+                    press="handleCreateProduct"
+                />
+            </m:OverflowToolbar>
+        </m:footer>
     </m:Page>
 </mvc:View>
