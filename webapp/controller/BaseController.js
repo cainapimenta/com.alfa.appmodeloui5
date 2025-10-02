@@ -22,6 +22,10 @@ sap.ui.define(
 
             setBusy: function (boolean) {
                 return this.getView().setBusy(boolean);
+            },
+
+            getComponent: function () {
+                return this.getOwnerComponent();
             }
         });
     }

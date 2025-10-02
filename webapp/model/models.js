@@ -1,7 +1,6 @@
 sap.ui.define([
     "sap/ui/model/json/JSONModel",
-    "sap/ui/Device",
-    "com/alfa/appmodeloui5/connection/connector"
+    "sap/ui/Device"
 ],
     function (JSONModel, Device, connector) {
         "use strict";
@@ -15,12 +14,6 @@ sap.ui.define([
                 var oModel = new JSONModel(Device);
                 oModel.setDefaultBindingMode("OneWay");
                 return oModel;
-            },
-            createProduct: function (data) {
-                return connector.create("/Products", data);
-            },
-            deleteProduct: function (sProductId) {
-                return connector.delete(`/Products(${sProductId})`);
             }
         };
 

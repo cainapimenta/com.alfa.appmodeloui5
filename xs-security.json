@@ -1,7 +1,28 @@
 {
-  "xsappname": "comalfaappmodeloui5",
-  "tenant-mode": "dedicated",
-  "description": "Security profile of called application",
-  "scopes": [],
-  "role-templates": []
+	"xsappname": "comalfaappmodeloui5",
+	"tenant-mode": "dedicated",
+	"description": "Security profile of called application",
+	"scopes": [
+		{
+			"name": "$XSAPPNAME.FIORI_APP_MODELO_ADMIN",
+			"description": "Admin Access"
+		}
+	],
+	"role-templates": [
+		{
+			"name": "Token_Exchange",
+			"description": "UAA",
+			"scope-references": [
+				"uaa.user"
+			]
+		},
+		{
+			"name": "FIORI_APP_MODELO_ADMIN",
+			"description": "Admin Access",
+			"scope-references": [
+				"$XSAPPNAME.FIORI_APP_MODELO_ADMIN"
+			],
+			"attribute-references": []
+		}
+	]
 }

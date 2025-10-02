@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog title="Editar Produto">
+        <content>
+            <VBox>
+                <f:SimpleForm>
+                    <f:content>
+                        <Label text="ID" />
+                        <Input
+                            value="{editProduct>/ID}"
+                            placeholder="Digite o ID"
+                            editable="false"
+                        />
+                        <Label text="Produto" />
+                        <Input
+                            value="{editProduct>/Name}"
+                            placeholder="Digite o nome do produto"
+                        />
+                        <Label text="Descrição" />
+                        <Input
+                            value="{editProduct>/Description}"
+                            placeholder="Digite a descrição do produto"
+                        />
+                        <Label text="Avaliação" />
+                        <RatingIndicator
+                            value="{editProduct>/Rating}"
+                            maxValue="5"
+                        />
+                        <Label text="Preço" />
+                        <Input
+                            value="{editProduct>/Price}"
+                            placeholder="Digite o preço do produto"
+                        />
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </content>
+        <buttons>
+            <Button
+                text="Fechar"
+                type="Transparent"
+                press="onCloseDialog"
+            />
+            <Button
+                text="Atualizar"
+                type="Emphasized"
+                press="onUpdateProductDialog"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

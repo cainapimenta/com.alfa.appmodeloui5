@@ -3,6 +3,11 @@
   "authenticationMethod": "route",
   "routes": [
     {
+      "source": "^/user-api/currentUser$",
+      "target": "/currentUser",
+      "service": "sap-approuter-userapi"
+    },
+    {
       "source": "^/V2/(.*)$",
       "target": "/V2/$1",
       "destination": "nortwhind",

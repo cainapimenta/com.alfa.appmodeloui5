@@ -24,31 +24,46 @@
                 </m:OverflowToolbar>
             </extension>
             <columns>
-                <Column resizable="false">
+                <Column
+                    resizable="false"
+                    visible="true"
+                >
                     <m:Label text="ID do Produto" />
                     <template>
                         <m:Label text="{ID}" />
                     </template>
                 </Column>
-                <Column resizable="false">
+                <Column
+                    resizable="false"
+                    visible="true"
+                >
                     <m:Label text="Produto" />
                     <template>
                         <m:Label text="{Name}" />
                     </template>
                 </Column>
-                <Column resizable="false">
+                <Column
+                    resizable="false"
+                    visible="true"
+                >
                     <m:Label text="Descrição" />
                     <template>
                         <m:Label text="{Description}" />
                     </template>
                 </Column>
-                <Column resizable="false">
+                <Column
+                    resizable="false"
+                    visible="true"
+                >
                     <m:Label text="Avaliação" />
                     <template>
                         <m:Label text="{Rating}" />
                     </template>
                 </Column>
-                <Column resizable="false">
+                <Column
+                    resizable="false"
+                    visible="true"
+                >
                     <m:Label text="Preço" />
                     <template>
                         <m:Label text="{Price}" />
@@ -57,6 +72,32 @@
                 <Column
                     resizable="false"
                     width="5rem"
+                    visible="{
+                        path: 'user>/scopes', 
+                        formatter: '.formatter.isUserAllowedToEdit'
+                    }"
+                >
+                    <m:Label text="" />
+                    <template>
+                        <m:HBox
+                            alignItems="Center"
+                            justifyContent="Center"
+                        >
+                            <m:Button
+                                icon="sap-icon://edit"
+                                press="handleUpdateProduct"
+                                type="Emphasized"
+                            />
+                        </m:HBox>
+                    </template>
+                </Column>
+                <Column
+                    resizable="false"
+                    width="5rem"
+                    visible="{
+                        path: 'user>/scopes', 
+                        formatter: '.formatter.isUserAllowedToEdit'
+                    }"
                 >
                     <m:Label text="" />
                     <template>
@@ -86,6 +127,10 @@
                     icon="sap-icon://add"
                     iconFirst="false"
                     press="handleCreateProduct"
+                    visible="{
+                        path: 'user>/scopes', 
+                        formatter: '.formatter.isUserAllowedToEdit'
+                    }"
                 />
             </m:OverflowToolbar>
         </m:footer>
